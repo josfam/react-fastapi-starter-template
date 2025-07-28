@@ -1,6 +1,22 @@
 # react-fastapi-starter-template
 
-This is a template for a full stack web app that uses React for the frontend, and fastapi on the backend
+This is a template for a full stack web app that uses React for the frontend, and fastapi on the backend.
+\
+This template is designed to help me get started quickly with a new project, and save time on boilerplate code.
+\
+Here's a list of the technologies used in this template:
+
+- **Frontend**
+  - [React](https://react.dev/)
+  - [Shadcn UI](https://ui.shadcn.com/)
+  - [Tailwind CSS](https://tailwindcss.com/)
+  - [TanStack Router](https://tanstack.com/router/latest)
+  - [TanStack Query](https://tanstack.com/query/latest)
+
+- **Backend**
+  - [FastAPI](https://fastapi.tiangolo.com/)
+  - [SQLAlchemy](https://pypi.org/project/SQLAlchemy/)
+  - [PostgreSQL](https://www.postgresql.org/)
 
 ---
 
