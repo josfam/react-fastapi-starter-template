@@ -2,7 +2,8 @@
 
 This is a template for a full stack web app that uses React for the frontend, and fastapi on the backend.
 \
-This template is designed to help me get started quickly with a new project, and save time on boilerplate code.
+It is designed to help me get up and running quickly with a new project, and save time on boilerplate code.
+\
 \
 Here's a list of the technologies used in this template:
 
