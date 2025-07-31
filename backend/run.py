@@ -2,6 +2,7 @@
 
 from fastapi import FastAPI, status, APIRouter
 from fastapi.responses import JSONResponse
+from fastapi.middleware import cors
 from contextlib import asynccontextmanager
 from backend.storage.database import db_init, close_db
 # import routers
@@ -19,6 +20,14 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app_router.include_router(users.user_router)
 app.include_router(app_router)
+
+app.add_middleware(
+    cors.CORSMiddleware,
+    allow_origins=["*"],  # Adjust for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/", status_code=status.HTTP_200_OK)
 def root():
