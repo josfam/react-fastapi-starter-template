@@ -8,11 +8,11 @@ from backend.storage import Base
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(String(6), primary_key=True, index=True)  # predefined student ID
-    first_name = Column(String(120), unique=True)
-    last_name = Column(String(120), unique=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    first_name = Column(String(120), nullable=False)
+    last_name = Column(String(120), nullable=False)
     email = Column(String, unique=True, nullable=False)
-    hashed_password = Column(String)
+    hashed_password = Column(String, nullable=False)
     created_at = Column(DateTime, nullable=False)
     updated_at = Column(DateTime, nullable=False)
 
