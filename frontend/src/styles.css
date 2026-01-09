@@ -1,21 +1,25 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   @apply m-0;
   font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 :root {
@@ -126,6 +130,31 @@ code {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* custom fonts */
+  --font-sans: "Inter", sans-serif, -apple-system, "Segoe UI";
+
+  /* custom spacing */
+  --nav-height: calc(var(--spacing) * 24);
+  --nav-top-offset: calc(var(--spacing) * 24 + 2rem);
+  --nav-top-offset-larger: calc(var(--spacing) * 24 + 4rem);
+  --section-min-height: calc(50vh - 100px);
+  --section-px-mobile: calc(var(--spacing) * 4);
+  --section-px-sm: calc(var(--spacing) * 8);
+  --section-px-lg: calc(var(--spacing) * 28);
+  --section-px-xl: calc(var(--spacing) * 50);
+
+  /* padding */
+  --card-padding: calc(var(--spacing) * 5);
+  --card-rounding: var(--radius-3xl);
+  --container-padding: calc(var(--spacing) * 6);
+  --nav-padding: calc(var(--spacing) * 3);
+  --nav-rounding: calc(var(--spacing) * 6);
+  /* sizing */
+  --social-icon-size: calc(var(--spacing) * 10);
+
+  /* breakpoints */
+  --breakpoint-3xl: 122rem;
 }
 
 @layer base {
@@ -135,4 +164,26 @@ code {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.section-pt {
+  padding-top: calc(var(--nav-height) + (var(--spacing) * 12));
+}
+
+.section-pb {
+  padding-bottom: calc(var(--spacing) * 24);
+}
+
+.pre-footer-bottom-padding {
+  @apply mb-20 sm:mb-40;
+}
+
+/* text */
+.text-body {
+  @apply 3xl:text-xl text-xl sm:text-2xl;
+}
+
+.text-body-large,
+h1 {
+  @apply text-3xl 2xl:text-4xl;
 }
