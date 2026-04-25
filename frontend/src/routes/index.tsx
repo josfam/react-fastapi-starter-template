@@ -1,12 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { HomePage } from "@/pages/home";
+import { createFileRoute } from '@tanstack/react-router'
+import { Homepage } from "../pages/HomePage";
 
-export const Route = createFileRoute("/")({
-  component: App,
-});
+export const Route = createFileRoute('/')({
+  component: Index,
+})
 
-function App() {
-  return (
-    <HomePage/>
-  );
+function Index() {
+  return <Homepage />;
 }

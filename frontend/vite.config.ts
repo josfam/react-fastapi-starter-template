@@ -1,12 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
 import tailwindcss from "@tailwindcss/vite";
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
-import path from "path";
+import react from '@vitejs/plugin-react'
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    // Please make sure that '@tanstack/router-plugin' is passed before '@vitejs/plugin-react'
     tanstackRouter({
       target: "react",
       autoCodeSplitting: true,
@@ -14,26 +14,4 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // Separate chunk for react-icons
-        //   "react-icons": ["react-icons/fa", "react-icons/fa6"], // uncomment if react-icons is used
-          // Separate chunk for motion
-        //   motion: ["motion/react"], // uncomment for motion library if used
-        },
-      },
-    },
-  },
-  // @ts-ignore - vitest 'test' config merged into Vite config causes type mismatch
-  test: {
-    globals: true,
-    environment: "jsdom",
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
 });

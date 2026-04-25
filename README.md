@@ -21,7 +21,7 @@ Here's a list of the technologies used in this template:
 
 ---
 
-The `frontend/` template was created using the following commands:
+The `frontend/` template was created using these steps:
 
 ```sh
 pnpm create vite@latest frontend -- --template react-ts
